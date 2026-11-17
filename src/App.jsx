@@ -50,7 +50,7 @@ function App() {
         setDice( (prev) => prev.map( (die, idx) => idx === index ? {...die, isHeld: !die.isHeld} : die ) )
     }
 
-    const [dice, setDice] = useState( genNewDice())
+    const [dice, setDice] = useState( () => genNewDice())
 
 
     function setAllDice() {
