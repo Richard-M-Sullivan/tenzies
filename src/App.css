@@ -33,6 +33,7 @@ main {
 
     background-color: white;
     border-radius: 10px;
+    gap: 3rem;
 }
 
 main .diceSection {
@@ -41,4 +42,18 @@ main .diceSection {
     justify-items: center;
     align-items: center;
     gap: 1.5rem;
+}
+
+main .rollButton {
+    background-color: lightgrey;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: solid black 1px;
+}
+
+.rollButton:hover {
+    
+    background-color: lightblue;
 }

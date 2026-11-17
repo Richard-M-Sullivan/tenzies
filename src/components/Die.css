@@ -15,3 +15,7 @@
     font-weight: 800;
     cursor: pointer;
 }
+    
+.held {
+    background-color: lightgreen;
+}
