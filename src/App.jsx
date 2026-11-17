@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use'
 
 import './App.css'
 
 import Die from './components/Die'
 
 function App() {
+    const {width, height} = useWindowSize();
 
     function randomRoll() {
         return Math.floor( Math.random() * 6 + 1)    
@@ -66,6 +69,8 @@ function App() {
     console.log(`Game Won: ${altGameWon()}`)
 
     return (
+        <>
+        { gameWon() ? <Confetti width={width} height={height} /> : null}
         <main>
             <div className="text">
             <h1>Tenzies</h1>
@@ -82,7 +87,7 @@ function App() {
                 { (altGameWon()) ? "Play Again" : "Roll"}
             </button>
         </main>
-
+        </> 
     )
 }
 
