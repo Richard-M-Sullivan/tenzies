@@ -13,10 +13,14 @@ function App() {
     function genNewDice() {
         return Array.from({length:10}, (i) => ({ 
                 value: randomRoll(),
-                isHeld: true,
+                isHeld: false,
                 id: i, 
             })
         )
+    }
+
+    function rollDice() {
+        setDice( (prev) => prev.map( (die) => ( die.isHeld === false ? {...die, value:randomRoll()} : die)))
     }
 
     function toggleHold(index) {
@@ -43,7 +47,7 @@ function App() {
             <div className="diceSection">
                 {diceComponents}
             </div>
-            <button className="rollButton" onClick={setAllDice}>roll</button>
+            <button className="rollButton" onClick={rollDice}>roll</button>
         </main>
 
     )
